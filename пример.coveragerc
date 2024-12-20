@@ -1,0 +1,2 @@
+[run]
+omit = task_list/*, .venv/*, manage.py, prog_task_list/migrations/*, prog_task_list/schema.py, prog_task_list/tests.py, prog_task_list/serializers.py, prog_task_list/views.py
