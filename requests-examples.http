@@ -1,0 +1,78 @@
+# примеры API-запросов
+
+@baseUrl = http://127.0.0.1:8000
+#@baseUrl = http://localhost
+# Блок работы с Задачами!
+
+###
+
+# создание задачи
+POST {{baseUrl}}/task/
+Content-Type: application/json
+
+{
+    "title": "Привет, это тестовая задача",
+    "description": "Описание тестовой задачи",
+    "due_date": null,
+    "is_completed": false,
+    "created_at": "2024-12-12T19:32:56.014709Z",
+    "tags": [
+        1
+    ]
+}
+###
+
+# получение списка всех задач на листе
+GET {{baseUrl}}/task/
+
+###
+
+# обновление информации по конкретному ID
+PATCH {{baseUrl}}/task/9/
+Content-Type: application/json
+
+{
+    "title": "Привет, это изменённая тестовая задача",
+    "description": "Описание тестовой задачи изменено",
+    "due_date": null,
+    "is_completed": false,
+    "created_at": "2024-12-12T19:32:56.014709Z",
+    "tags": [
+        2
+    ]
+}
+
+###
+
+# удаление конкретной задачи по ID
+DELETE {{baseUrl}}/task/7/
+
+###
+
+# Блок работы с Тегами!
+
+###
+
+# получение списка всех тегов
+GET {{baseUrl}}/tags/
+
+###
+
+# получение списка всех тегов лист 2
+GET {{baseUrl}}/tags/?page=2
+
+###
+
+# удаление конкретной задачи по ID
+DELETE {{baseUrl}}/tags/37/
+
+###
+
+# создание задачи
+POST {{baseUrl}}/tags/
+Content-Type: application/json
+
+{
+    "name": "Тестовый Тег!"
+}
+###
